@@ -1,5 +1,7 @@
-package main.java;
+package main.java.Utils;
 
+import main.java.DataStructers.AvailableOptions;
+import main.java.DataStructers.Rule;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -11,6 +13,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class XMLParser {
 
@@ -34,7 +37,6 @@ public class XMLParser {
             Document doc = db.parse(new File(FILENAME));
             doc.getDocumentElement().normalize();
 
-            System.out.println("Root Element : " + doc.getDocumentElement().getNodeName() + "\n");
             gamesKnowledgeBaseNodeList = doc.getElementsByTagName("games_knowledge_base");
 
             for(int i = 0; i < gamesKnowledgeBaseNodeList.getLength(); i++) {
@@ -47,7 +49,8 @@ public class XMLParser {
         }
     }
 
-    public void makeInitialPremisesList(){
+    public ArrayList<AvailableOptions> getAvailableOptionsArrayList(){
+        ArrayList<AvailableOptions> availableOptionsArrayList = new ArrayList<>();
         for(int i = 0; i < initialPremisesNodeList.getLength(); i++) {
             spMpNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("sp-mp");
             platformNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("platform");
@@ -55,13 +58,16 @@ public class XMLParser {
             contentRatingNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("content_rating");
         }
 
-        // TODO CREATE PREMISES LIST
-    }
-    public void makeRulesList(){
-        System.out.println(rulesNodeList.item(0).getTextContent());
-        String test = rulesNodeList.item(0).getTextContent().split(",")[6];
-        System.out.println(test);
+        // TODO
 
-        // TODO CREATE RULES LIST
+        return availableOptionsArrayList;
+    }
+    public ArrayList<Rule> getRulesArrayList(){
+        String[] ruleStringArray = rulesNodeList.item(0).getTextContent().replaceAll(" ", "").replaceAll("\n", "").split(",");
+        ArrayList<Rule> rulesArrayList = new ArrayList<>();
+        for(int i = 0; i < ruleStringArray.length; i = i + 5){
+            rulesArrayList.add(new Rule(ruleStringArray[i], ruleStringArray[i + 1], ruleStringArray[i + 2], ruleStringArray[i + 3], ruleStringArray[i + 4]));
+        }
+        return rulesArrayList;
     }
 }
