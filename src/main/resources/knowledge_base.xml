@@ -43,6 +43,13 @@
           PEGI3+,
           FIFA 2022
       </rule>
+      <rule>
+          Multiplayer2,
+          PC2,
+          Sport2,
+          PEGI3+2,
+          FIFA 20222
+      </rule>
   </rules>
   <games>
       <game>FIFA 2022</game>
