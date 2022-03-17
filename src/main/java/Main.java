@@ -1,7 +1,7 @@
 package main.java;
 
-import main.java.DataStructers.AvailableOptions;
-import main.java.DataStructers.Rule;
+import main.java.DataStructures.AvailableOptions;
+import main.java.DataStructures.Rule;
 import main.java.Utils.XMLParser;
 
 import java.util.ArrayList;
@@ -14,6 +14,8 @@ public class Main {
         XMLParser xmlParser = new XMLParser();
         xmlParser.doGeneralSetup();
         ArrayList<AvailableOptions> availableOptionsArrayList;
+        AvailableOptions availableOptions = xmlParser.getAvailableOptions();
+        System.out.println(availableOptions.toString());
         ArrayList<Rule> rulesArrayList = xmlParser.getRulesArrayList();
         for(int i = 0; i < rulesArrayList.size(); i++){
             System.out.println(rulesArrayList.get(i).toString() + "\n");

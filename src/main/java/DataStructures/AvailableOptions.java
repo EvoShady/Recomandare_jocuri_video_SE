@@ -1,4 +1,4 @@
-package main.java.DataStructers;
+package main.java.DataStructures;
 
 public class AvailableOptions {
     public String[] smMp;
@@ -40,5 +40,9 @@ public class AvailableOptions {
             temp += contentRating[i] + "\n";
         }
         return temp + "\n";
+    }
+
+    public String toString(){
+        return getAvailableSmMp() + getAvailablePlatforms() + getAvailableGenres() + getAvailableContentRatings();
     }
 }

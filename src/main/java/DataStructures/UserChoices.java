@@ -1,4 +1,4 @@
-package main.java.DataStructers;
+package main.java.DataStructures;
 
 public class UserChoices {
 

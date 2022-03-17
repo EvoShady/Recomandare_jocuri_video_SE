@@ -1,4 +1,4 @@
-package main.java.DataStructers;
+package main.java.DataStructures;
 
 public class Rule {
     private String condition1, condition2, condition3, condition4, result;

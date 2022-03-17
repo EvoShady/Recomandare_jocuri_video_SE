@@ -1,7 +1,7 @@
 package main.java.Utils;
 
-import main.java.DataStructers.AvailableOptions;
-import main.java.DataStructers.Rule;
+import main.java.DataStructures.AvailableOptions;
+import main.java.DataStructures.Rule;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -49,18 +49,22 @@ public class XMLParser {
         }
     }
 
-    public ArrayList<AvailableOptions> getAvailableOptionsArrayList(){
-        ArrayList<AvailableOptions> availableOptionsArrayList = new ArrayList<>();
+    public AvailableOptions getAvailableOptions(){
+        AvailableOptions availableOptions;
         for(int i = 0; i < initialPremisesNodeList.getLength(); i++) {
             spMpNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("sp-mp");
             platformNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("platform");
             genreNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("genre");
             contentRatingNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("content_rating");
         }
+        String[] availableSpMpOptions = spMpNodeList.item(0).getTextContent().replaceAll(" ", "").replaceAll("\n", "").split(",");
+        String[] availablePlatformOptions = platformNodeList.item(0).getTextContent().replaceAll(" ", "").replaceAll("\n", "").split(",");
+        String[] availableGenreOptions = genreNodeList.item(0).getTextContent().replaceAll(" ", "").replaceAll("\n", "").split(",");
+        String[] availableContentRatingOptions = contentRatingNodeList.item(0).getTextContent().replaceAll(" ", "").replaceAll("\n", "").split(",");
 
-        // TODO
+        availableOptions = new AvailableOptions(availableSpMpOptions, availablePlatformOptions, availableGenreOptions, availableContentRatingOptions);
 
-        return availableOptionsArrayList;
+        return availableOptions;
     }
     public ArrayList<Rule> getRulesArrayList(){
         String[] ruleStringArray = rulesNodeList.item(0).getTextContent().replaceAll(" ", "").replaceAll("\n", "").split(",");

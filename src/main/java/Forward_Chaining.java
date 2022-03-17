@@ -1,6 +1,8 @@
-import DataStructers.Rule;
-import DataStructers.UserChoices;
+package main.java;
+
 import DataStructers.Games;
+import main.java.DataStructures.Rule;
+import main.java.DataStructures.UserChoices;
 
 import java.util.ArrayList;
 
