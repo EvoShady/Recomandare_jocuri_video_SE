@@ -12,8 +12,6 @@ public class Main {
 
         //Temporary parser use case
         XMLParser xmlParser = new XMLParser();
-        xmlParser.doGeneralSetup();
-        ArrayList<AvailableOptions> availableOptionsArrayList;
         AvailableOptions availableOptions = xmlParser.getAvailableOptions();
         System.out.println(availableOptions.toString());
         ArrayList<Rule> rulesArrayList = xmlParser.getRulesArrayList();

@@ -27,7 +27,7 @@ public class XMLParser {
     private NodeList genreNodeList;
     private NodeList contentRatingNodeList;
 
-    public void doGeneralSetup() {
+    private void doGeneralSetup() {
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         try {
@@ -39,17 +39,16 @@ public class XMLParser {
 
             gamesKnowledgeBaseNodeList = doc.getElementsByTagName("games_knowledge_base");
 
-            for(int i = 0; i < gamesKnowledgeBaseNodeList.getLength(); i++) {
-                initialPremisesNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("initial_premises");
-                rulesNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("rules");
-            }
-
         } catch (SAXException | IOException | ParserConfigurationException e) {
             e.printStackTrace();
         }
     }
 
     public AvailableOptions getAvailableOptions(){
+        doGeneralSetup();
+        for(int i = 0; i < gamesKnowledgeBaseNodeList.getLength(); i++) {
+            initialPremisesNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("initial_premises");
+        }
         AvailableOptions availableOptions;
         for(int i = 0; i < initialPremisesNodeList.getLength(); i++) {
             spMpNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("sp-mp");
@@ -67,6 +66,10 @@ public class XMLParser {
         return availableOptions;
     }
     public ArrayList<Rule> getRulesArrayList(){
+        doGeneralSetup();
+        for(int i = 0; i < gamesKnowledgeBaseNodeList.getLength(); i++) {
+            rulesNodeList = ((Element) gamesKnowledgeBaseNodeList.item(i)).getElementsByTagName("rules");
+        }
         String[] ruleStringArray = rulesNodeList.item(0).getTextContent().replaceAll(" ", "").replaceAll("\n", "").split(",");
         ArrayList<Rule> rulesArrayList = new ArrayList<>();
         for(int i = 0; i < ruleStringArray.length; i = i + 5){

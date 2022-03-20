@@ -1,14 +1,14 @@
 package main.java.DataStructures;
 
 public class Rule {
-    private String condition1, condition2, condition3, condition4, result;
+    private String condition1, condition2, condition3, condition4, conclusion;
 
     public Rule(String condition1, String condition2, String condition3, String condition4, String result) {
         this.condition1 = condition1;
         this.condition2 = condition2;
         this.condition3 = condition3;
         this.condition4 = condition4;
-        this.result = result;
+        this.conclusion = result;
     }
 
     public String getCondition1() {
@@ -27,11 +27,11 @@ public class Rule {
         return condition4;
     }
 
-    public String getResult() {
-        return result;
+    public String getConclusion() {
+        return conclusion;
     }
 
     public String toString(){
-        return "Condition 1: " + condition1 + "\nCondition 2: " + condition2 + "\nCondition 3: " + condition3 + "\nCondition 4: " + condition4 + "\nResult: " + result;
+        return "Condition 1: " + condition1 + "\nCondition 2: " + condition2 + "\nCondition 3: " + condition3 + "\nCondition 4: " + condition4 + "\nResult: " + conclusion;
     }
 }

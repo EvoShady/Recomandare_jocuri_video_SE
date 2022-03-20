@@ -1,5 +1,8 @@
 package main.java;
 
+import main.java.DataStructures.AvailableOptions;
+import main.java.Utils.XMLParser;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -18,9 +21,19 @@ public class GUIMain {
 
         // Main Frame
         JPanel generalPanel = new JPanel();
-        generalPanel.setBorder(BorderFactory.createEmptyBorder(250, 250, 250, 250));
+        generalPanel.setBorder(BorderFactory.createEmptyBorder(150, 150, 150, 150));
 
-        generalPanel.add(new JLabel("Test"));
+        XMLParser xmlParser = new XMLParser();
+        AvailableOptions availableOptions = xmlParser.getAvailableOptions();
+        JComboBox availableSpMpJComboBox =  new JComboBox(availableOptions.smMp);
+        JComboBox availablePlatformJComboBox =  new JComboBox(availableOptions.platform);
+        JComboBox availableGenreJComboBox =  new JComboBox(availableOptions.genre);
+        JComboBox availableContentRatingJComboBox =  new JComboBox(availableOptions.contentRating);
+
+        generalPanel.add(availableSpMpJComboBox);
+        generalPanel.add(availablePlatformJComboBox);
+        generalPanel.add(availableGenreJComboBox);
+        generalPanel.add(availableContentRatingJComboBox);
 
         frame.setTitle("Games Recommendation SE");
         ImageIcon logo = new ImageIcon("src/main/resources/logo.png");
