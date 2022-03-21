@@ -3,7 +3,7 @@
     <initial_premises>
         <sp-mp>Singleplayer,Multiplayer,</sp-mp>
         <platform>PC,Playstation,XBox,Nintendo,Mobile,VR,</platform>
-        <genre>Action,Adventure,Puzzle,Role-playing,Simulation,Strategy,Sport,Horror,Board or card,Shooting,Sandbox,Educational,</genre>
+        <genre>Action,Adventure,Puzzle,Role-playing,Simulation,Strategy,Sport,Horror,BoardOrCard,Shooting,Sandbox,Educational,</genre>
         <content_rating>PEGI3+,PEGI8+,PEGI12+,PEGI16+,PEGI18+,</content_rating>
     </initial_premises>
     <rules>

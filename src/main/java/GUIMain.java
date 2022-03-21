@@ -1,7 +1,9 @@
 package main.java;
 
 import main.java.DataStructures.AvailableOptions;
+import main.java.DataStructures.UserChoices;
 import main.java.Utils.XMLParser;
+import main.java.Utils.BiMapConvertor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,15 +27,21 @@ public class GUIMain {
 
         XMLParser xmlParser = new XMLParser();
         AvailableOptions availableOptions = xmlParser.getAvailableOptions();
+        BiMapConvertor biMapConvertor = new BiMapConvertor();
+        availableOptions = biMapConvertor.knowledgeBaseToGuiFormat(availableOptions.smMp, availableOptions.platform, availableOptions.genre, availableOptions.contentRating);
         JComboBox availableSpMpJComboBox =  new JComboBox(availableOptions.smMp);
         JComboBox availablePlatformJComboBox =  new JComboBox(availableOptions.platform);
         JComboBox availableGenreJComboBox =  new JComboBox(availableOptions.genre);
         JComboBox availableContentRatingJComboBox =  new JComboBox(availableOptions.contentRating);
 
+        UserChoices userChoices = biMapConvertor.guiToKnowledgeBaseFormat(availableOptions.smMp[0], availableOptions.platform[3], availableOptions.genre[4], availableOptions.contentRating[2]);
+        JComboBox temp = new JComboBox(new String[]{userChoices.getSpMpChoice(), userChoices.getPlatformChoice(), userChoices.getGenreChoice(), userChoices.getContentRatingChoice()});
+
         generalPanel.add(availableSpMpJComboBox);
         generalPanel.add(availablePlatformJComboBox);
         generalPanel.add(availableGenreJComboBox);
         generalPanel.add(availableContentRatingJComboBox);
+        generalPanel.add(temp);
 
         frame.setTitle("Games Recommendation SE");
         ImageIcon logo = new ImageIcon("src/main/resources/logo.png");
