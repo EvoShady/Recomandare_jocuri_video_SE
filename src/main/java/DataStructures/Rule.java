@@ -3,12 +3,12 @@ package main.java.DataStructures;
 public class Rule {
     private String condition1, condition2, condition3, condition4, conclusion;
 
-    public Rule(String condition1, String condition2, String condition3, String condition4, String result) {
+    public Rule(String condition1, String condition2, String condition3, String condition4, String conclusion) {
         this.condition1 = condition1;
         this.condition2 = condition2;
         this.condition3 = condition3;
         this.condition4 = condition4;
-        this.conclusion = result;
+        this.conclusion = conclusion;
     }
 
     public String getCondition1() {

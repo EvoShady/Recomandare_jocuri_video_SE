@@ -8,7 +8,7 @@ public class BiMapConvertor {
 
     private ImmutableBiMap<Object, Object> knowledgeBaseAndGuiBiMap;
 
-    public void createBiMap(){
+    private void createBiMap(){
         knowledgeBaseAndGuiBiMap = new ImmutableBiMap.Builder<>()
                 .put("Singleplayer", "Prefera sa se joace un joc singur/a")
                 .put("Multiplayer", "Prefera sa se joace online cu alte persoane")

@@ -11,6 +11,14 @@ import java.awt.*;
 public class GUIMain {
 
     JFrame frame = new JFrame();
+    JPanel spMpPanel = new JPanel();
+    JPanel platformPanel = new JPanel();
+    JPanel genrePanel = new JPanel();
+    JPanel contentRatingPanel = new JPanel();
+    JPanel conclusionPanel = new JPanel();
+    JPanel generalPanel = new JPanel();
+    JPanel choicePanel = new JPanel();
+    JLabel conclusionLabel = new JLabel("");;
 
     public static void main(String[] args) {
         new GUIMain();
@@ -21,10 +29,7 @@ public class GUIMain {
 
     public void initializeUI() {
 
-        // Main Frame
-        JPanel generalPanel = new JPanel();
-        generalPanel.setBorder(BorderFactory.createEmptyBorder(150, 150, 150, 150));
-
+        // Preparation logic
         XMLParser xmlParser = new XMLParser();
         AvailableOptions availableOptions = xmlParser.getAvailableOptions();
         BiMapConvertor biMapConvertor = new BiMapConvertor();
@@ -34,15 +39,43 @@ public class GUIMain {
         JComboBox availableGenreJComboBox =  new JComboBox(availableOptions.genre);
         JComboBox availableContentRatingJComboBox =  new JComboBox(availableOptions.contentRating);
 
-        UserChoices userChoices = biMapConvertor.guiToKnowledgeBaseFormat(availableOptions.smMp[0], availableOptions.platform[3], availableOptions.genre[4], availableOptions.contentRating[2]);
-        JComboBox temp = new JComboBox(new String[]{userChoices.getSpMpChoice(), userChoices.getPlatformChoice(), userChoices.getGenreChoice(), userChoices.getContentRatingChoice()});
+        // SpMp Panel
+        spMpPanel.setBorder(BorderFactory.createTitledBorder("Tip"));
+        spMpPanel.add(availableSpMpJComboBox);
 
-        generalPanel.add(availableSpMpJComboBox);
-        generalPanel.add(availablePlatformJComboBox);
-        generalPanel.add(availableGenreJComboBox);
-        generalPanel.add(availableContentRatingJComboBox);
-        generalPanel.add(temp);
+        // Platform Panel
+        platformPanel.setBorder(BorderFactory.createTitledBorder("Platforma"));
+        platformPanel.add(availablePlatformJComboBox);
 
+        // Genre Panel
+        genrePanel.setBorder(BorderFactory.createTitledBorder("Gen"));
+        genrePanel.add(availableGenreJComboBox);
+
+        // Content Rating Panel
+        contentRatingPanel.setBorder(BorderFactory.createTitledBorder("Varsta"));
+        contentRatingPanel.add(availableContentRatingJComboBox);
+
+        // Choice Panel
+        choicePanel.setLayout(new GridLayout(2, 2));
+
+        choicePanel.add(spMpPanel);
+        choicePanel.add(platformPanel);
+        choicePanel.add(genrePanel);
+        choicePanel.add(contentRatingPanel);
+
+        // Button Panel
+        JButton conclusionButton = new JButton("Search");
+        conclusionButton.addActionListener(e-> getConclusion());
+        JPanel conclusionButtonPanel = new JPanel();
+        conclusionButtonPanel.add(conclusionButton);
+
+        // General Panel
+        generalPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
+        generalPanel.setLayout(new GridLayout(0, 1));
+        generalPanel.add(choicePanel);
+        generalPanel.add(conclusionButtonPanel);
+
+        // Main Frame
         frame.setTitle("Games Recommendation SE");
         ImageIcon logo = new ImageIcon("src/main/resources/logo.png");
         frame.setIconImage(logo.getImage());
@@ -51,5 +84,14 @@ public class GUIMain {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+    }
+
+    public void getConclusion(){
+        conclusionLabel.setText("Not implemented yet");
+
+        conclusionPanel.add(conclusionLabel);
+        conclusionPanel.setBorder(BorderFactory.createTitledBorder("Recommended games"));
+        generalPanel.add(conclusionPanel);
+        frame.pack();
     }
 }
