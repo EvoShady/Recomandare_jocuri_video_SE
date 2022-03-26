@@ -1,7 +1,6 @@
 package main.java;
 
 import main.java.DataStructures.AvailableOptions;
-import main.java.DataStructures.UserChoices;
 import main.java.Utils.XMLParser;
 import main.java.Utils.BiMapConvertor;
 
@@ -18,7 +17,15 @@ public class GUIMain {
     JPanel conclusionPanel = new JPanel();
     JPanel generalPanel = new JPanel();
     JPanel choicePanel = new JPanel();
-    JLabel conclusionLabel = new JLabel("");;
+    JLabel conclusionLabel = new JLabel("");
+
+    XMLParser xmlParser;
+    AvailableOptions availableOptions;
+    BiMapConvertor biMapConvertor;
+    JComboBox availableSpMpJComboBox;
+    JComboBox availablePlatformJComboBox;
+    JComboBox availableGenreJComboBox;
+    JComboBox availableContentRatingJComboBox;
 
     public static void main(String[] args) {
         new GUIMain();
@@ -30,28 +37,22 @@ public class GUIMain {
     public void initializeUI() {
 
         // Preparation logic
-        XMLParser xmlParser = new XMLParser();
-        AvailableOptions availableOptions = xmlParser.getAvailableOptions();
-        BiMapConvertor biMapConvertor = new BiMapConvertor();
+        xmlParser = new XMLParser();
+        availableOptions = xmlParser.getAvailableOptions();
+        biMapConvertor = new BiMapConvertor();
         availableOptions = biMapConvertor.knowledgeBaseToGuiFormat(availableOptions.smMp, availableOptions.platform, availableOptions.genre, availableOptions.contentRating);
-        JComboBox availableSpMpJComboBox =  new JComboBox(availableOptions.smMp);
-        JComboBox availablePlatformJComboBox =  new JComboBox(availableOptions.platform);
-        JComboBox availableGenreJComboBox =  new JComboBox(availableOptions.genre);
-        JComboBox availableContentRatingJComboBox =  new JComboBox(availableOptions.contentRating);
+        availableSpMpJComboBox =  new JComboBox(availableOptions.smMp);
+        availablePlatformJComboBox =  new JComboBox(availableOptions.platform);
+        availableGenreJComboBox =  new JComboBox(availableOptions.genre);
+        availableContentRatingJComboBox =  new JComboBox(availableOptions.contentRating);
 
-        // SpMp Panel
+        // Category Panels
         spMpPanel.setBorder(BorderFactory.createTitledBorder("Tip"));
         spMpPanel.add(availableSpMpJComboBox);
-
-        // Platform Panel
         platformPanel.setBorder(BorderFactory.createTitledBorder("Platforma"));
         platformPanel.add(availablePlatformJComboBox);
-
-        // Genre Panel
         genrePanel.setBorder(BorderFactory.createTitledBorder("Gen"));
         genrePanel.add(availableGenreJComboBox);
-
-        // Content Rating Panel
         contentRatingPanel.setBorder(BorderFactory.createTitledBorder("Varsta"));
         contentRatingPanel.add(availableContentRatingJComboBox);
 
@@ -65,7 +66,7 @@ public class GUIMain {
 
         // Button Panel
         JButton conclusionButton = new JButton("Search");
-        conclusionButton.addActionListener(e-> getConclusion());
+        conclusionButton.addActionListener(e -> getConclusion());
         JPanel conclusionButtonPanel = new JPanel();
         conclusionButtonPanel.add(conclusionButton);
 
@@ -87,7 +88,17 @@ public class GUIMain {
     }
 
     public void getConclusion(){
-        conclusionLabel.setText("Not implemented yet");
+
+        ForwardChaining forwardChaining = new ForwardChaining(
+                biMapConvertor.guiToKnowledgeBaseFormat(
+                        availableSpMpJComboBox.getSelectedItem().toString(),
+                        availablePlatformJComboBox.getSelectedItem().toString(),
+                        availableGenreJComboBox.getSelectedItem().toString(),
+                        availableContentRatingJComboBox.getSelectedItem().toString()
+                ), xmlParser.getRulesArrayList()
+        );
+        forwardChaining.Interference();
+        conclusionLabel.setText(forwardChaining.getResultedRecommendations());
 
         conclusionPanel.add(conclusionLabel);
         conclusionPanel.setBorder(BorderFactory.createTitledBorder("Recommended games"));
