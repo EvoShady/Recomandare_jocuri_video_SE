@@ -23,8 +23,8 @@ public class UserChoices {
         return genreChoice;
     }
 
-    public String getContentRatingChoice() {
-        return contentRatingChoice;
+    public int getContentRatingChoice() {
+        return Integer.parseInt(contentRatingChoice.replace("PEGI","").replace("+",""));
     }
 
     public String toString(){

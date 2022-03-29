@@ -3,15 +3,65 @@
     <initial_premises>
         <sp-mp>Singleplayer,Multiplayer,</sp-mp>
         <platform>PC,Playstation,XBox,Nintendo,Mobile,VR,</platform>
-        <genre>Action,Adventure,Puzzle,Role-playing,Simulation,Strategy,Sport,Horror,BoardOrCard,Shooting,Sandbox,Educational,</genre>
+        <genre>Roleplay,Adventure,ActionAdventure,Racing,SandboxAdventure,ActionRoleplay,Strategy,DigitalCollectibleCardGame,Platformer,SurvivalHorror,FirstPersonShooter,HackAndSlash,MMORPG,Fighting,Shooter,Sport,Racing,Puzzle,</genre>
         <content_rating>PEGI3+,PEGI8+,PEGI12+,PEGI16+,PEGI18+,</content_rating>
     </initial_premises>
     <rules>
-        <rule>Multiplayer,PC,Sport,PEGI3+,FIFA 2022,</rule>
-        <rule>Singleplayer,XBox,Action,PEGI8+,FIFA 2023,</rule>
-        <rule>Multiplayer,Playstation,Adventure,PEGI12+,FIFA 2024,</rule>
+        <rule>Singleplayer,Playstation,Roleplay,PEGI16+,Demon Gaze,</rule>
+        <rule>Singleplayer,Nintendo,RolePlay,PEGI12+,Monster Hunter Rise,</rule>
+        <rule>Singleplayer,PC,SandboxAdventure,PEGI3+,Astroneer,</rule>
+        <rule>Singleplayer,PC,ActionAdventure,PEGI16+,Shadow Man: Remastered,</rule>
+        <rule>Singleplayer,XBox,ActionRoleplay,PEGI12+,Nobody Saves the World,</rule>
+        <rule>Multiplayer,Playstation,DigitalCollectibleCardGame,PEGI3+,Yu-Gi-Oh! Master Duel,</rule>
+        <rule>Singleplayer,PC,Platformer,PEGI12+,The Artful Escape,</rule>
+        <rule>Singleplayer,Nintendo,ActionRoleplay,PEGI3+,Pokemon Legends: Arceus,</rule>
+        <rule>Singleplayer,PC,SurvivalHorror,PEGI18+,Dying Light 2 Stay Human,</rule>
+        <rule>Multiplayer,XBox,FirstPersonShooter,PEGI16+,CrossfireX,</rule>
+        <rule>Singleplayer,PC,ActionRoleplay,PEGI18+,Cyberpunk 2077,</rule>
+        <rule>Singleplayer,Playstation,HackAndSlash,PEGI12+,Dynasty Warriors 9,</rule>
+        <rule>Multiplayer,PC,MMORPG,PEGI16+,Star Wars: The Old Republic,</rule>
+        <rule>Singleplayer,PC,Fighting,PEGI12+,The King of Fighters XV,</rule>
+        <rule>Multiplayer,PC,Strategy,PEGI16+,Total War: Warhammer III,</rule>
+        <rule>Singleplayer,Playstation,ActionRoleplay,PEGI16+,Horizon Forbidden West,</rule>
+        <rule>Multiplayer,PC,ActionRoleplay,PEGI12+,Destiny 2: The Witch Queen,</rule>
+        <rule>Singleplayer,Playstation,Roleplay,PEGI12+,Monark,</rule>
+        <rule>Singleplayer,PC,Shooter,PEGI8+,Sol Cresta,</rule>
+        <rule>Singleplayer,PC,SurvivalHorror,PEGI18+,Martha is Dead,</rule>
+        <rule>Singleplayer,PC,ActionRoleplay,PEGI16+,Elden Ring,</rule>
+        <rule>Singleplayer,PC,Sport,PEGI16+,WWE 2K22,</rule>
+        <rule>Singleplayer,PC,ActionAdventure,PEGI18+,Grand Theft Auto V,</rule>
+        <rule>Singleplayer,XBox,Fighting,PEGI18+,Persona 4 Arena Ultimax,</rule>
+        <rule>Multiplayer,Playstation,ActionRoleplay,PEGI12+,Stranger of Paradise: Final Fantasy Origin,</rule>
+        <rule>Singleplayer,PC,Adventure,PEGI12+,Syberia: The World Before,</rule>
+        <rule>Singleplayer,Nintendo,Roleplay,PEGI8+,Rune Factory 5,</rule>
+        <rule>Multiplayer,Playstation,ActionRoleplay,PEGI8+,The Ascent,</rule>
+        <rule>Singleplayer,Playstation,ActionAdventure,PEGI12+,Ghostwire: Tokyo,</rule>
+        <rule>Singleplayer,Playstation,Strategy,PEGI12+,Crusader Kings III,</rule>
+        <rule>Singleplayer,Playstation,ActionRoleplay,PEGI12+,Crystar,</rule>
+        <rule>Singleplayer,Playstation,ActionAdventure,PEGI18+,Death Stranding,</rule>
+        <rule>Singleplayer,PC,ActionRoleplay,PEGI18+,Weird West,</rule>
+        <rule>Multiplayer,PC,FirstPersonShooter,PEGI12+,Halo Infinite,</rule>
+        <rule>Multiplayer,PC,MMORPG,PEGI16+,New World,</rule>
+        <rule>Multiplayer,PC,FirstPersonShooter,PEGI18+,Far Cry 6,</rule>
+        <rule>Multiplayer,PC,Racing,PEGI8+,Forza Horizon 5,</rule>
+        <rule>Singleplayer,PC,SurvivalHorror,PEGI18+,Resident Evil Village,</rule>
+        <rule>Singleplayer,PC,FirstPersonShooter,PEGI18+,Deathloop,</rule>
+        <rule>Singleplayer,PC,ActionAdventure,PEGI18+,Hitman 3,</rule>
+        <rule>Singleplayer,PC,Racing,PEGI8+,Ride 4,</rule>
+        <rule>Singleplayer,PC,SurvivalHorror,PEGI18+,The Medium,</rule>
+        <rule>Singleplayer,PC,Platformer,PEGI8+,The Pedestrian,</rule>
+        <rule>Singleplayer,PC,ActionAdventure,PEGI16+,Control: Ultimate Edition,</rule>
+        <rule>Multiplayer,Nintendo,Roleplay,PEGI18+,Haven,</rule>
+        <rule>Multiplayer,Nintendo,MMORPG,PEGI12+,Skyforge,</rule>
+        <rule>Singleplayer,ActionAdventure,Playstation,PEGI18+,Yakuza 6: The Song of Life,</rule>
+        <rule>Multiplayer,Playstation,Platformer,PEGI8+,Balan Wonderworld,</rule>
+        <rule>Multiplayer,PC,Platformer,PEGI12+,It Takes Two,</rule>
+        <rule>Singleplayer,PC,Roleplay,PEGI18+,Disco Elysium: The Final Cut,</rule>
+        <rule>Singleplayer,PC,SurvivalHorror,PEGI18+,Resident Evil 7: Biohazard,</rule>
+        <rule>Singleplayer,Playstation,SurvivalHorror,PEGI18+,Days Gone,</rule>
+        <rule>Singleplayer,PC,Puzzle,PEIG3+,Manifold Garden,</rule>
+        <rule>Singleplayer,PC,DigitalCollectibleCardGame,PEIG12+,Griftlands,</rule>
+        <rule>Singleplayer,Playstation,ActionAdventure,PEGI16+,Destroy All Humans!,</rule>
+        <rule>Singleplayer,PC,ActionAdventure,PEGI12+,Subnautica: Below Zero,</rule>
     </rules>
-    <games>
-        <game>FIFA 2022</game>
-    </games>
 </games_knowledge_base>

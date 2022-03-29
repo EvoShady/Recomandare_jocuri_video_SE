@@ -23,8 +23,8 @@ public class Rule {
         return condition3;
     }
 
-    public String getCondition4() {
-        return condition4;
+    public int getCondition4() {
+        return Integer.parseInt(condition4.replace("PEGI","").replace("+",""));
     }
 
     public String getConclusion() {

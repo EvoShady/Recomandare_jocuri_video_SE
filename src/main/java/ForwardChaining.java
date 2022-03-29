@@ -15,7 +15,7 @@ public class ForwardChaining {
                 this.ruleList = ruleList;
         }
 
-        public void Interference() {
+        public void doInference() {
 
                 for (int i = 0; i < ruleList.size(); i++) {
                         if (!ruleList.get(i).getCondition1().equals(userChoices.getSpMpChoice())) {
@@ -33,7 +33,7 @@ public class ForwardChaining {
                                 i--;
                                 continue;
                         }
-                        if (!ruleList.get(i).getCondition4().equals(userChoices.getContentRatingChoice())) {
+                        if (ruleList.get(i).getCondition4() <= userChoices.getContentRatingChoice()) {
                                 ruleList.remove(i);
                                 i--;
                                 continue;
@@ -44,13 +44,13 @@ public class ForwardChaining {
         public String getResultedRecommendations(){
                 String temp = "";
                 for(int i = 0; i < ruleList.size(); i++){
-                        temp += ruleList.get(i).getConclusion() + " ";
+                        temp += ruleList.get(i).getConclusion() + ", ";
                 }
                 if(temp.equals("")) {
                         return "No games found";
                 }
                 else {
-                        return temp;
+                        return temp.substring(0,temp.length()-2);
                 }
         }
 }

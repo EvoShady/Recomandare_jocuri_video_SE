@@ -97,7 +97,7 @@ public class GUIMain {
                         availableContentRatingJComboBox.getSelectedItem().toString()
                 ), xmlParser.getRulesArrayList()
         );
-        forwardChaining.Interference();
+        forwardChaining.doInference();
         conclusionLabel.setText(forwardChaining.getResultedRecommendations());
 
         conclusionPanel.add(conclusionLabel);
