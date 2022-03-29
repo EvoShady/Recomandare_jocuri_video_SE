@@ -33,7 +33,8 @@ public class ForwardChaining {
                                 i--;
                                 continue;
                         }
-                        if (ruleList.get(i).getCondition4() <= userChoices.getContentRatingChoice()) {
+
+                        if (ruleList.get(i).getCondition4() > userChoices.getContentRatingChoice()) {
                                 ruleList.remove(i);
                                 i--;
                                 continue;
