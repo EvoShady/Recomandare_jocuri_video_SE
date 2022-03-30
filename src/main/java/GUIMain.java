@@ -1,6 +1,7 @@
 package main.java;
 
 import main.java.DataStructures.AvailableOptions;
+import main.java.DataStructures.UserChoices;
 import main.java.Utils.XMLParser;
 import main.java.Utils.BiMapConvertor;
 
@@ -88,15 +89,13 @@ public class GUIMain {
     }
 
     public void getConclusion(){
+        UserChoices userChoices = biMapConvertor.guiToKnowledgeBaseFormat(
+                availableSpMpJComboBox.getSelectedItem().toString(),
+                availablePlatformJComboBox.getSelectedItem().toString(),
+                availableGenreJComboBox.getSelectedItem().toString(),
+                availableContentRatingJComboBox.getSelectedItem().toString());
 
-        ForwardChaining forwardChaining = new ForwardChaining(
-                biMapConvertor.guiToKnowledgeBaseFormat(
-                        availableSpMpJComboBox.getSelectedItem().toString(),
-                        availablePlatformJComboBox.getSelectedItem().toString(),
-                        availableGenreJComboBox.getSelectedItem().toString(),
-                        availableContentRatingJComboBox.getSelectedItem().toString()
-                ), xmlParser.getRulesArrayList()
-        );
+        ForwardChaining forwardChaining = new ForwardChaining(userChoices , xmlParser.getRulesArrayList());
         forwardChaining.doInference();
         conclusionLabel.setText(forwardChaining.getResultedRecommendations());
 

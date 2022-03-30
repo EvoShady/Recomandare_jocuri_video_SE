@@ -59,8 +59,8 @@
         <rule>Singleplayer,PC,Roleplay,PEGI18+,Disco Elysium: The Final Cut,</rule>
         <rule>Singleplayer,PC,SurvivalHorror,PEGI18+,Resident Evil 7: Biohazard,</rule>
         <rule>Singleplayer,Playstation,SurvivalHorror,PEGI18+,Days Gone,</rule>
-        <rule>Singleplayer,PC,Puzzle,PEIG3+,Manifold Garden,</rule>
-        <rule>Singleplayer,PC,DigitalCollectibleCardGame,PEIG12+,Griftlands,</rule>
+        <rule>Singleplayer,PC,Puzzle,PEGI3+,Manifold Garden,</rule>
+        <rule>Singleplayer,PC,DigitalCollectibleCardGame,PEGI12+,Griftlands,</rule>
         <rule>Singleplayer,Playstation,ActionAdventure,PEGI16+,Destroy All Humans!,</rule>
         <rule>Singleplayer,PC,ActionAdventure,PEGI12+,Subnautica: Below Zero,</rule>
     </rules>
