@@ -16,8 +16,6 @@ public class BiMapConvertor {
                 .put("Playstation", "Playstation")
                 .put("XBox", "XBox")
                 .put("Nintendo", "Nintendo")
-                .put("Mobile", "Mobile")
-                .put("VR", "Virtual Reality")
                 .put("Roleplay","Un joc de rol in care jucătorul controlează acțiunile unui personaj")
                 .put("Adventure","Jucatorul isi asuma rolul unui protagonist intr-o poveste interactivă condusa de explorare")
                 .put("SandboxAdventure","Jucatorul este pus intr-o poveste ce necesita explorare si creativitate")
