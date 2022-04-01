@@ -178,8 +178,7 @@
         <rule>Singleplayer,Playstation,Adventure,PEGI3+,El Hijo - A Wild West Tale,</rule>
         <rule>Multiplayer,Nintendo,Platformer,PEGI3+,One Hand Clapping,</rule>
         <rule>Multiplayer,Nintendo,Puzzle,PEGI3+,Phogs,</rule>
-        <rule>Multiplayer,Nintendo,Puzzle,PEGI3+,Phogs,</rule>
-        <rule>Multiplayer,PC,Strategy,PEGI3+,Hundred Days, Winemaking Simulator,</rule>
+        <rule>Multiplayer,PC,Strategy,PEGI3+,Hundred Days Winemaking Simulator,</rule>
         <rule>Singleplayer,XBox,Sport,PEGI3+,Amped 2,</rule>
         <rule>Multiplayer,PC,Platformer,PEGI3+,Fall Guys: Ultimate Knockout,</rule>
         <rule>Singleplayer,PC,Roleplay,PEGI3+,Paper Mario: The Origami King,</rule>
@@ -207,5 +206,6 @@
         <rule>Multiplayer,PC,Strategy,PEGI12+,Chaos Reborn,</rule>
         <rule>Singleplayer,PC,Roleplay,PEGI12+,Citizens of Earth,</rule>
         <rule>Singleplayer,PC,Roleplay,PEGI16+,Dragon Fin Soup,</rule>
+        <rule>Multiplayer,PC,DigitalCollectibleCardGame,PEGI8+,Hearthstone,</rule>
     </rules>
 </games_knowledge_base>
