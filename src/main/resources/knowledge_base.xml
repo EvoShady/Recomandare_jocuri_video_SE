@@ -119,7 +119,7 @@
         <rule>Singleplayer,PC,Strategy,PEGI12+,XCOM 2,</rule>
         <rule>Singleplayer,PC,HackAndSlash,PEGI18+,Nier Automata,</rule>
         <rule>Multiplayer,PC,HackAndSlash,PEGI8+,Torchlight II,</rule>
-        <rule>Singleplayer,PC,MMOPRG,PEGI12+,Neverwinter,</rule>
+        <rule>Singleplayer,PC,MMORPG,PEGI12+,Neverwinter,</rule>
         <rule>Multiplayer,PC,Puzzle,PEGI3+,Keep Talking And Nobody Explodes,</rule>
         <rule>Multiplayer,PC,Sport,PEGI3+,FIFA 22,</rule>
         <rule>Multiplayer,PC,SurvivalHorror,PEGI18+,Deceit,</rule>
